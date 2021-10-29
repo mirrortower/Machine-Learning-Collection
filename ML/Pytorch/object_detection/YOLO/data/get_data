@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-                                                              
-## OR DOWNLOAD FROM HERE (FASTER DOWNLOAD)                                          
 # VOC2007 DATASET                                                              
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar

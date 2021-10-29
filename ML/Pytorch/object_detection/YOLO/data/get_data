@@ -9,9 +9,6 @@ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
 tar xf VOCtrainval_06-Nov-2007.tar
 tar xf VOCtest_06-Nov-2007.tar
 
-# Need voc_label.py to clean up data from xml files
-wget https://pjreddie.com/media/files/voc_label.py
-
 # Run python file to clean data from xml files
 python voc_label.py
 

@@ -72,6 +72,15 @@ def train_fn(train_loader, model, optimizer, loss_fn):
 
     print(f"Mean loss was {sum(mean_loss)/len(mean_loss)}")
 
+def test_fn(test_loader, model):
+    pred_boxes, target_boxes = get_bboxes(
+            test_loader, model, iou_threshold=0.5, threshold=0.4
+        )
+    mean_avg_prec = mean_average_precision(
+        pred_boxes, target_boxes, iou_threshold=0.5, box_format="midpoint"
+    )
+    print(f"Test mAP: {mean_avg_prec}")
+    
 
 def main():
     model = Yolov1(split_size=7, num_boxes=2, num_classes=20).to(DEVICE)
@@ -142,7 +151,7 @@ def main():
         #    time.sleep(10)
 
         train_fn(train_loader, model, optimizer, loss_fn)
-
+        test_fn(test_loader, model)
 
 if __name__ == "__main__":
     main()

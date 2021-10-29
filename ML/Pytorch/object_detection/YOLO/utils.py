@@ -196,7 +196,8 @@ def mean_average_precision(
         recalls = torch.cat((torch.tensor([0]), recalls))
         # torch.trapz for numerical integration
         average_precisions.append(torch.trapz(precisions, recalls))
-
+        
+    print(f"MAP@0.5 for all classes:",[ap.item() for ap in average_precisions])
     return sum(average_precisions) / len(average_precisions)
 
 

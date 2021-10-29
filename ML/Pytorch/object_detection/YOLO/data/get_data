@@ -21,22 +21,7 @@ mv 2007* old_txt_files/
 
 python generate_csv.py
 
-mkdir data
-mkdir data/images
-mkdir data/labels
-
-cp VOCdevkit/*.jpg data/images/
-cp VOCdevkit/VOC2007/labels/*.txt data/labels/
-
-mkdir data                                                                              
-mkdir data/images                                                                       
-mkdir data/labels                                                                       
-                                                                                        
-mv VOCdevkit/VOC2007/JPEGImages/*.jpg data/images/                                      
-mv VOCdevkit/VOC2007/labels/*.txt data/labels/                                          
-
 # We don't need VOCdevkit folder anymore, can remove
 # in order to save some space 
-rm -rf VOCdevkit/
 mv test.txt old_txt_files/
 mv train.txt old_txt_files/

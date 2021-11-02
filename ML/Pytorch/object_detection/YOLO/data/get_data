@@ -1,4 +1,4 @@
-# VOC2007 DATASET                                                              
+# # VOC2007 DATASET                                                              
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
 
@@ -21,7 +21,15 @@ mv 2007* old_txt_files/
 
 python generate_csv.py
 
+mkdir images
+mkdir labels
+
+cp VOCdevkit/VOC2007/labels/*.txt labels/
+mv VOCdevkit/VOC2007/JPEGImages/*.jpg images/                                      
+mv VOCdevkit/VOC2007/labels/*.txt labels/                                          
+
 # We don't need VOCdevkit folder anymore, can remove
 # in order to save some space 
+rm -rf VOCdevkit/
 mv test.txt old_txt_files/
 mv train.txt old_txt_files/
